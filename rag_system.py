@@ -2,14 +2,20 @@ import numpy as np
 from sklearn.manifold import TSNE
 import matplotlib.pyplot as plt
 from sklearn.metrics.pairwise import cosine_similarity
-from FlagEmbedding import BGEM3FlagModel 
+#from FlagEmbedding import BGEM3FlagModel 
+from transformers import pipeline
 
 # Caricamento del modello
-model = BGEM3FlagModel('BAAI/bge-m3', use_fp16=True)
+#model = BGEM3FlagModel('BAAI/bge-m3', use_fp16=True)
+model = pipeline(
+        'feature-extraction', model='alexdseo/RecipeBERT', framework='pt'
+    )
 
 def index_database(data):
     # Calcolo degli embeddings
-    embeddings = model.encode(data)['dense_vecs']
+    #embeddings = model.encode(data)['dense_vecs']
+    embeddings = model(data, return_tensors='pt')[0].numpy().mean(axis=0)
+
     # Salvataggio degli embeddings come file .npy
     np.save('embeddings.npy', embeddings)
 
@@ -19,7 +25,7 @@ def load_embedding_matrix(dembeddings_path):
     return loaded_embeddings
 
 def search(query, embedding_matrix):
-    query_embedding = model.encode([query])['dense_vecs'][0]
+    query_embedding = model(query, return_tensors='pt')[0].numpy().mean(axis=0)
     similarities = cosine_similarity([query_embedding], embedding_matrix)[0]
     similarity_results = sorted(enumerate(similarities), key=lambda x: x[1], reverse=True)
     return similarity_results

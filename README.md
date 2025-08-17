@@ -1,6 +1,6 @@
 # Creazione e Integrazione di un Sistema RAG in un Agente AI
 
-Questo tutorial ti guiderà nella creazione di un sistema RAG (Retrieval Augmented Generation) e nella sua integrazione con un agente AI, basandosi su due video YouTube.
+ creazione di un sistema RAG (Retrieval Augmented Generation) e nella sua integrazione con un agente AI
 
 ---
 
@@ -10,7 +10,6 @@ Questo tutorial ti guiderà nella creazione di un sistema RAG (Retrieval Augment
 Il sistema RAG consente di migliorare le capacità di generazione di un modello di linguaggio, utilizzando un motore di recupero informazioni per fornire al modello dati esterni contestuali.
 
 ### **Tutorial YouTube**
-[![Creazione del Sistema RAG](https://img.youtube.com/vi/SSc_OVJli4Q/0.jpg)](https://youtu.be/SSc_OVJli4Q)
 
 **Cosa imparerai:**
 1. **Teoria del RAG**:
@@ -31,9 +30,6 @@ Il sistema RAG consente di migliorare le capacità di generazione di un modello 
 
 ### **Descrizione**
 Dopo aver creato il sistema RAG, il prossimo passo è integrarlo in un agente AI per automatizzare e rendere interattiva la gestione delle richieste basate su conoscenza.
-
-### **Tutorial YouTube**
-[![Integrazione in un Agente AI](https://img.youtube.com/vi/c7t44DbWaWo/0.jpg)](https://youtu.be/c7t44DbWaWo)
 
 **Cosa imparerai:**
 1. **Connessione del Sistema RAG all'Agente**:
